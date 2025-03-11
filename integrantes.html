@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INTEGRANTES</title>
+  
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/images/SWS_2.png" type="image/svg+xml">
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Work+Sans:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <style>
+    /* Estilos para los integrantes */
+    .profiles {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding: 20px;
+        margin-top: 120px;
+        margin-bottom: 50px;
+    }
+
+    .avatar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 140px;
+    }
+
+    .avatar-img img {
+        width: 100px;
+        height: auto;
+        border-radius: 50%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Animación de flotación */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .avatar-img {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Efecto hover */
+    .avatar-img img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    p {
+        font-size: 14px;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    p span {
+        font-size: 12px;
+        color: gray;
+    }
+
+    /* Footer centrado */
+    .footer-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .social-list {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin: 15px 0;
+    }
+
+    .footer-text {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- Header -->
+  <header class="header active" data-header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="./assets/images/SWS_2.png" width="110" height="53" alt="Spazio WIC Supremacy">
+      </a>
+
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="index.html#home" class="navbar-link" data-nav-link>INICIO</a>
+          </li>
+          <li class="navbar-item">
+            <a href="index.html#tournament" class="navbar-link" data-nav-link>PRÓXIMOS TORNEOS</a>
+          </li>
+          <li class="navbar-item">
+            <a href="index.html#news" class="navbar-link" data-nav-link>NOTICIAS</a>
+          </li>
+          <li class="navbar-item">
+            <a href="https://discord.com/invite/U29PPzHsz5" class="navbar-link" data-nav-link>CONTACTO</a>
+          </li>
+          <li class="navbar-item">
+            <a href="merch.html" class="navbar-link" data-nav-link>MERCH</a>
+          </li>
+          <li class="navbar-item">
+            <a href="integrantes.html" class="navbar-link" data-nav-link>INTEGRANTES</a>
+          </li>
+        </ul>
+      </nav>
+
+      <a href="https://discord.com/invite/U29PPzHsz5" class="btn" data-btn>JOIN NOW!</a>
+
+      <button class="nav-toggle-btn" aria-label="toggle menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Integrantes con animaciones -->
+  <main>
+    <section class="profiles">
+        <div class="avatar">
+            <div class="avatar-img">
+                <img src="/assets/images/Integrantes/CHARMED.jpg">
+            </div>
+            <p>CHARMED<br><span></span></p>
+            <a href="https://x.com/charmedWW" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            <a href="https://www.twitch.tv/imcharm3d" class="social-link">
+              <ion-icon name="logo-twitch"></ion-icon>
+            </a>
+        </div>
+        
+        <div class="avatar">
+            <div class="avatar-img">
+                <img src="/assets/images/Integrantes/MIKY.jpg">
+            </div>
+            <p>MIKY<br><span></span></p>
+            <a href="https://x.com/mikygp4" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>  
+        </div>
+        
+        <div class="avatar">
+            <div class="avatar-img">
+                <img src="/assets/images/Integrantes/7pabloz.jpg">
+            </div>
+            <p>Pabloz<br><span></span></p>
+            <a href="https://x.com/7PabloZ" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+        </div>
+        
+        <div class="avatar">
+            <div class="avatar-img">
+                <img src="/assets/images/Integrantes/ASTROMAD.jpg">
+            </div>
+            <p>ASTROMAD<br><span></span></p>
+            <a href="https://x.com/astromad6" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+        </div>
+
+        <div class="avatar">
+          <div class="avatar-img">
+              <img src="/assets/images/Integrantes/SIKOO.jpg">
+          </div>
+          <p>SIKOO<br><span></span></p>
+          <a href="https://x.com/Sikoodg" class="social-link">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </div>
+
+        <div class="avatar">
+          <div class="avatar-img">
+              <img src="/assets/images/Integrantes/ANDRECG.jpg">
+          </div>
+          <p>ANDRECG<br><span></span></p>
+          <a href="https://x.com/AndrCastaeda4" class="social-link">
+            <ion-icon name="logo-twitter"></ion-icon>
+          </a>
+        </div>
+    </section>
+  </main>
+
+  <!-- Footer centrado -->
+  <footer class="footer">
+    <div class="section footer-top">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="./assets/images/SWS_2.png" width="150" height="73" loading="lazy" alt="Spazio WIC Supremacy">
+          </a>
+          <p class="footer-text">
+            Demuestra tu poder en SWS, el competitivo oficial de WonderWars. 
+          </p>
+          <ul class="social-list">
+            <li>
+              <a href="https://x.com/spazioWICsmcy" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@WIChampionship/featured" target="_blank" class="social-link">
+                <ion-icon name="logo-youtube"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="https://discord.com/invite/U29PPzHsz5" class="social-link">
+                <ion-icon name="logo-discord"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">&copy; 2025 SPAZIO WIC SUPREMACY</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
