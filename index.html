@@ -38,9 +38,85 @@
   <link rel="preload" as="image" href="./assets/images/hero-banner.png">
   <link rel="preload" as="image" href="./assets/images/hero-banner-bg.png">
 
+  <style>
+    /* Estilos para la animación de intro */
+    .intro-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: opacity 1s ease;
+    }
+
+    .intro-overlay.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .intro-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .loading-bar-container {
+      width: 80%;
+      max-width: 600px;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .loading-bar {
+      width: 0;
+      height: 100%;
+      background: #00ffcc;
+      border-radius: 5px;
+      animation: loading 3s linear forwards;
+    }
+
+    @keyframes loading {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
+
+    /* Ocultar contenido principal hasta que termine la intro */
+    body.loading header,
+    body.loading main,
+    body.loading footer,
+    body.loading .back-top-btn,
+    body.loading .cursor {
+      display: none;
+    }
+  </style>
 </head>
 
-<body id="top">
+<body id="top" class="loading">
+
+  <!-- Intro Overlay con Video de Fondo -->
+  <div class="intro-overlay" id="introOverlay">
+    <video class="intro-video" autoplay muted loop playsinline>
+      <source src="/assets/images/LOGORENDERSWS.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="loading-bar-container">
+      <div class="loading-bar"></div>
+    </div>
+  </div>
 
   <!-- 
     - #HEADER
@@ -79,7 +155,6 @@
           <li class="navbar-item">
             <a href="integrantes.html" class="navbar-link" data-nav-link>INTEGRANTES</a>
           </li>
-
 
         </ul>
       </nav>
@@ -152,14 +227,14 @@
 
                 <h3 class="h3 card-title">mozzarella</h3>
 
-                <div class="card-meta">CUARTOS</div>
+                <div class="card-meta">OCTAVOS</div>
 
               </div>
 
               <div class="upcoming-time" data-reveal="bottom">
-                <time class="time" datetime="19:00">20:00</time>
+                <time class="time" datetime="19:00">19:00</time>
 
-                <time class="date" datetime="2025-03-04">13 Marzo 2025</time>
+                <time class="date" datetime="2025-03-04">11 Marzo 2025</time>
 
                 <div class="social-wrapper">
                   <a href="https://x.com/spazioWICsmcy" class="social-link">
@@ -174,12 +249,12 @@
 
               <div class="upcoming-card right has-before" data-reveal="right">
 
-                <img src="./assets/images/EQUIPOS/ICNIX.png" width="86" height="81" loading="lazy"
+                <img src="./assets/images/EQUIPOS/NNT.png" width="86" height="81" loading="lazy"
                   alt="FREE WYN" class="card-banner">
 
-                <h3 class="h3 card-title">FREE WYN</h3>
+                <h3 class="h3 card-title">NNT</h3>
 
-                <div class="card-meta">CUARTOS</div>
+                <div class="card-meta">OCTAVOS</div>
 
               </div>
 
@@ -189,19 +264,19 @@
 
               <div class="upcoming-card left has-before" data-reveal="left">
 
-                <img src="./assets/images/EQUIPOS/ICNIX.png" width="86" height="81" loading="lazy"
+                <img src="./assets/images/EQUIPOS/7 PM.png" width="86" height="81" loading="lazy"
                   alt="The Black Hat Hackers" class="card-banner">
 
-                <h3 class="h3 card-title">ARGONAUTAS ICNEOS</h3>
+                <h3 class="h3 card-title">7 PM</h3>
 
-                <div class="card-meta">CUARTOS</div>
+                <div class="card-meta">OCTAVOS</div>
 
               </div>
 
               <div class="upcoming-time" data-reveal="bottom">
-                <time class="time" datetime="20:00">19:00</time>
+                <time class="time" datetime="20:00">20:00</time>
 
-                <time class="date" datetime="2025-03-04">13 Marzo 2025</time>
+                <time class="date" datetime="2025-03-04">11 Marzo 2025</time>
 
                 <div class="social-wrapper">
                   <a href="https://x.com/spazioWICsmcy" class="social-link">
@@ -221,7 +296,7 @@
 
                 <h3 class="h3 card-title">WONDER KNIGHTS</h3>
 
-                <div class="card-meta">CUARTOS</div>
+                <div class="card-meta">OCTAVOS</div>
 
               </div>
               </div>
@@ -256,7 +331,7 @@
               <div class="news-card">
 
                 <figure class="card-banner img-holder" style="--width: 600; --height: 400;">
-                  <img src="./assets/images/CLASIFICACIÓN/LIGA SWS 14 MARZO.jpeg" width="600" height="400" loading="lazy"
+                  <img src="./assets/images/CLASIFICACIÓN/SWS LIGA.jpeg" width="600" height="400" loading="lazy"
                     alt="Innovative Business All Over The World." class="img-cover">
                 </figure>
 
@@ -269,7 +344,7 @@
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <time class="card-meta-text" datetime="2025-02-21">MAR 14 2025</time>
+                      <time class="card-meta-text" datetime="2025-02-21">MAR 7 2025</time>
                     </li>
 
                     <li class="card-meta-item">
@@ -285,7 +360,7 @@
                   </h3>
 
                   <p class="card-text">
-                    Clasificación liga individual SWS a fecha de 14 de Marzo 2025
+                    Clasificación liga individual SWS a fecha de 7 de Marzo 2025
                   </p>
 
                   <a href="articulo1.html" class="link has-before">Más Info</a>
@@ -299,7 +374,7 @@
               <div class="news-card">
 
                 <figure class="card-banner img-holder" style="--width: 600; --height: 400;">
-                  <img src="./assets/images/CLASIFICACIÓN/LIGA ESPONJA 14 MARZO.jpeg" width="600" height="400" loading="lazy"
+                  <img src="./assets/images/CLASIFICACIÓN/LIGA ESPONJA.jpeg" width="600" height="400" loading="lazy"
                     alt="How To Start Initiating An Startup In Few Days." class="img-cover">
                 </figure>
 
@@ -312,7 +387,7 @@
                     <li class="card-meta-item">
                       <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
 
-                      <time class="card-meta-text" datetime="2022-01-01">MAR 14 2025</time>
+                      <time class="card-meta-text" datetime="2022-01-01">MAR 7 2025</time>
                     </li>
 
                     <li class="card-meta-item">
@@ -328,7 +403,7 @@
                   </h3>
 
                   <p class="card-text">
-                    Clasificación liga individual ESPONJA a fecha de 14 de Marzo 2025
+                    Clasificación liga individual ESPONJA a fecha de 7 de Marzo 2025
                   </p>
 
                   <a href="articulo2.html" class="link has-before">Más INFO</a>
@@ -409,7 +484,7 @@
           </a>
 
           <p class="footer-text">
-            Demuestra tu poder en SWS, el competitivo co-oficial de WonderWars 
+            Demuestra tu poder en SWS, el competitivo oficial de WonderWars 
           </p>
 
           <ul class="social-list">
@@ -520,6 +595,21 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  <script>
+    // Script para controlar la animación de intro
+    window.addEventListener('load', () => {
+      const introOverlay = document.getElementById('introOverlay');
+      const body = document.body;
+
+      // Esperar 3 segundos antes de ocultar el overlay y mostrar el contenido
+      setTimeout(() => {
+        introOverlay.classList.add('hidden');
+        body.classList.remove('loading');
+        // Forzar un reflow para asegurar que el contenido se muestre correctamente
+        body.offsetHeight;
+      }, 3000);
+    });
+  </script>
 </body>
 
 </html>
